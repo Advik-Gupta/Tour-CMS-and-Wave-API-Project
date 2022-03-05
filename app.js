@@ -3,7 +3,7 @@ const express = require('express');
 var TourCMSApi = require('tourcms');
 const app = express();
 const port = process.env.PORT || 3000;
-const url = `https://wave3app-staging.herokuapp.com/mark_api/v1`;
+const url = `https://wave.live/mark_api/v1`;
 const cors = require('cors');
 const date = require('date-and-time');
 // ___________________________________________________________________________________________________________________________
