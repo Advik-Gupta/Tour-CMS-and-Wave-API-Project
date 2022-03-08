@@ -74,7 +74,7 @@ app.get('/:apiKey/:marketplaceId/:markApiKey', (req, res) => {
 							res.send('This tour is not a product');
 						} else if (tour.time_based) {
 							// if the product is time based this happens
-
+							console.log(start_date);
 							axios({
 								method: 'get',
 								url: `${url}/products/${tour.id}/availability/?date=${start_date}`,
