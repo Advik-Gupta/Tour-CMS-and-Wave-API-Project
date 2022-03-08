@@ -14,13 +14,20 @@ app.use(cors());
 // ___________________________________________________________________________________________________________________________
 
 // /?apiKey=&marketplaceId=&markApiKey=
+//https://shielded-headland-19387.herokuapp.com/?apiKey=e40c36eaca95&marketplaceId=0&markApiKey=mark_api_37044823-abd4-443e-89a6-50af92ac7d1e-04cd94b9-3887-455d-bbf8-d1e9b6396001
+//http://localhost:3000/bro/brotha/broski/?sex=yes
 
 app.get('/trial', (req, res) => {
 	res.send('API is working');
 });
 
-app.get('/', (req, res) => {
-	let { channel_id, apiKey, marketplaceId, markApiKey, booking_id } = req.query;
+app.get('/bro/:apiKey/:marketplaceId/:markApiKey', (req, res) => {
+	res.send({ params: req.params, query: req.query });
+});
+
+app.get('/:apiKey/:marketplaceId/:markApiKey', (req, res) => {
+	let { channel_id, booking_id } = req.query;
+	let { apiKey, marketplaceId, markApiKey } = req.params;
 	let channelId = parseInt(channel_id);
 	let bookingId = parseInt(booking_id);
 
