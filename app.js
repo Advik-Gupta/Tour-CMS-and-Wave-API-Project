@@ -52,7 +52,7 @@ app.get('/:apiKey/:marketplaceId/:markApiKey', (req, res) => {
 				customers_agecat_breakdown
 			} = response.booking;
 
-			if (event === 'new_confirmed_web' || event === 'new_confirmed_staff') {
+			if (event === 'new_confirmed_web' || event === 'new_confirmed_staff' || event === 'new_quotation_web') {
 				axios({
 					method: 'get',
 					url: `${url}/products`,
